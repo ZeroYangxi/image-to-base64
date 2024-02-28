@@ -15,14 +15,6 @@ function toDataURL(url, callback) {
   xhr.send();
 }
 
-// 调用toDataURL函数，传入一个图片的URL和一个回调函数
-toDataURL(
-  "https://www.gravatar.com/avatar/d50c83cc0c6523b4d3f6085295c953e0",
-  function (dataUrl) {
-    console.log("RESULT:", dataUrl);
-  }
-);
-
 // 当文件输入发生变化时执行这个函数
 document
   .getElementById("imageInput")
@@ -39,9 +31,9 @@ document
         let base64 = e.target.result;
         // 显示Base64编码，或者将其用作图片预览
         document.getElementById("result").innerHTML =
-          '<p>Base64编码：</p><textarea rows="5" cols="70">' +
+          '<p>Base64 code:</p><textarea rows="5" cols="70">' +
           base64 +
-          '</textarea><br><br><img src="' +
+          '<h2>Image Preview:</h2></textarea><br><br><img src="' +
           base64 +
           '" alt="Image Preview"/>';
       };
